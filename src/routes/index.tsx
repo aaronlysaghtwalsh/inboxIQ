@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
   component: Overview,
 });
 
-function Section({ title, to, list }: { title: string; to: LinkProps["to"]; list: InsightItem[] }) {
+function Section({ title, to, list }: { title: string; to: NonNullable<LinkProps["to"]>; list: InsightItem[] }) {
   return (
     <section>
       <div className="mb-3 flex items-center justify-between">

@@ -42,7 +42,7 @@ function WatchlistPage() {
               <div className="mt-4 space-y-1.5 border-t border-border pt-3">
                 {w.threadIds.map((id) => {
                   const t = getThread(id);
-                  const last = t.messages[t.messages.length - 1];
+                  const last = t.messages[t.messages.length - 1]!;
                   return (
                     <button key={id} onClick={() => setOpen(id)} className="flex w-full items-center justify-between gap-2 rounded-md px-2 py-1.5 text-left text-sm hover:bg-muted">
                       <span className="truncate">{t.subject}</span>
