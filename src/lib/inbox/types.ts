@@ -74,6 +74,6 @@ export interface WatchEntry {
 }
 
 export interface ItemState {
-  done?: boolean;
-  snoozedUntil?: string;
+  done?: boolean | undefined;
+  snoozedUntil?: string | undefined;
 }

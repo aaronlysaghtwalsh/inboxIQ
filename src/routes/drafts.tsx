@@ -14,7 +14,7 @@ import { toneLabels } from "@/lib/inbox/templates";
 import type { Tone } from "@/lib/inbox/types";
 
 export const Route = createFileRoute("/drafts")({
-  validateSearch: (s: Record<string, unknown>) => ({ id: typeof s.id === "string" ? s.id : undefined }),
+  validateSearch: (s: Record<string, unknown>) => ({ id: typeof s["id"] === "string" ? s["id"] : undefined }),
   head: () => ({
     meta: [
       { title: "Drafts — InboxIQ" },
@@ -30,7 +30,7 @@ function DraftsPage() {
   const { id } = Route.useSearch();
   const navigate = useNavigate({ from: "/drafts" });
   const { drafts, saveDraft, regenerate } = useInbox();
-  const current = drafts.find((d) => d.id === id) ?? drafts[0];
+  const current = drafts.find((d) => d.id === id) ?? drafts[0]!;
   const [subject, setSubject] = useState(current.subject);
   const [body, setBody] = useState(current.body);
   const [tone, setTone] = useState<Tone>(current.tone);
