@@ -1,4 +1,4 @@
-# Pixel Perfect Replica
+# InboxIQ
 
 Implement exactly the screenshot and nothing else
 
