@@ -10,9 +10,9 @@ import type { InsightItem } from "@/lib/inbox/types";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "InboxIQ — Your daily communications briefing" },
+      { title: "InboxIQ" },
       { name: "description", content: "InboxIQ surfaces what matters across all your email accounts: follow-ups, deadlines, commitments and rescued junk." },
-      { property: "og:title", content: "InboxIQ — Your daily communications briefing" },
+      { property: "og:title", content: "InboxIQ" },
       { property: "og:description", content: "See what matters across every inbox, ranked and explained." },
     ],
   }),
@@ -53,7 +53,7 @@ function Overview() {
 
   return (
     <>
-      <PageHeader title="Good morning, Maya." subtitle={`${date} · Here's what matters across your 3 inboxes.`} action={<BriefingDialog />} />
+      <PageHeader title="InboxIQ" subtitle={`${date} · Here's what matters across your 3 inboxes.`} action={<BriefingDialog />} />
 
       <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
         {stats.map((s) => (
