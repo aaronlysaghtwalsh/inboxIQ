@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DatesRouteImport } from './routes/dates'
+import { Route as DraftsRouteImport } from './routes/drafts'
+import { Route as FlaggedRouteImport } from './routes/flagged'
+import { Route as FollowUpsRouteImport } from './routes/follow-ups'
+import { Route as JunkRouteImport } from './routes/junk'
+import { Route as MemoryRouteImport } from './routes/memory'
+import { Route as MissedRouteImport } from './routes/missed'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as WatchlistRouteImport } from './routes/watchlist'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DatesRoute = DatesRouteImport.update({
+  id: '/dates',
+  path: '/dates',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DraftsRoute = DraftsRouteImport.update({
+  id: '/drafts',
+  path: '/drafts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FlaggedRoute = FlaggedRouteImport.update({
+  id: '/flagged',
+  path: '/flagged',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FollowUpsRoute = FollowUpsRouteImport.update({
+  id: '/follow-ups',
+  path: '/follow-ups',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JunkRoute = JunkRouteImport.update({
+  id: '/junk',
+  path: '/junk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MemoryRoute = MemoryRouteImport.update({
+  id: '/memory',
+  path: '/memory',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MissedRoute = MissedRouteImport.update({
+  id: '/missed',
+  path: '/missed',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WatchlistRoute = WatchlistRouteImport.update({
+  id: '/watchlist',
+  path: '/watchlist',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/dates': typeof DatesRoute
+  '/drafts': typeof DraftsRoute
+  '/flagged': typeof FlaggedRoute
+  '/follow-ups': typeof FollowUpsRoute
+  '/junk': typeof JunkRoute
+  '/memory': typeof MemoryRoute
+  '/missed': typeof MissedRoute
+  '/settings': typeof SettingsRoute
+  '/watchlist': typeof WatchlistRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/dates': typeof DatesRoute
+  '/drafts': typeof DraftsRoute
+  '/flagged': typeof FlaggedRoute
+  '/follow-ups': typeof FollowUpsRoute
+  '/junk': typeof JunkRoute
+  '/memory': typeof MemoryRoute
+  '/missed': typeof MissedRoute
+  '/settings': typeof SettingsRoute
+  '/watchlist': typeof WatchlistRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/dates': typeof DatesRoute
+  '/drafts': typeof DraftsRoute
+  '/flagged': typeof FlaggedRoute
+  '/follow-ups': typeof FollowUpsRoute
+  '/junk': typeof JunkRoute
+  '/memory': typeof MemoryRoute
+  '/missed': typeof MissedRoute
+  '/settings': typeof SettingsRoute
+  '/watchlist': typeof WatchlistRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/dates'
+    | '/drafts'
+    | '/flagged'
+    | '/follow-ups'
+    | '/junk'
+    | '/memory'
+    | '/missed'
+    | '/settings'
+    | '/watchlist'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/dates'
+    | '/drafts'
+    | '/flagged'
+    | '/follow-ups'
+    | '/junk'
+    | '/memory'
+    | '/missed'
+    | '/settings'
+    | '/watchlist'
+  id:
+    | '__root__'
+    | '/'
+    | '/dates'
+    | '/drafts'
+    | '/flagged'
+    | '/follow-ups'
+    | '/junk'
+    | '/memory'
+    | '/missed'
+    | '/settings'
+    | '/watchlist'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DatesRoute: typeof DatesRoute
+  DraftsRoute: typeof DraftsRoute
+  FlaggedRoute: typeof FlaggedRoute
+  FollowUpsRoute: typeof FollowUpsRoute
+  JunkRoute: typeof JunkRoute
+  MemoryRoute: typeof MemoryRoute
+  MissedRoute: typeof MissedRoute
+  SettingsRoute: typeof SettingsRoute
+  WatchlistRoute: typeof WatchlistRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dates': {
+      id: '/dates'
+      path: '/dates'
+      fullPath: '/dates'
+      preLoaderRoute: typeof DatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/drafts': {
+      id: '/drafts'
+      path: '/drafts'
+      fullPath: '/drafts'
+      preLoaderRoute: typeof DraftsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/flagged': {
+      id: '/flagged'
+      path: '/flagged'
+      fullPath: '/flagged'
+      preLoaderRoute: typeof FlaggedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/follow-ups': {
+      id: '/follow-ups'
+      path: '/follow-ups'
+      fullPath: '/follow-ups'
+      preLoaderRoute: typeof FollowUpsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/junk': {
+      id: '/junk'
+      path: '/junk'
+      fullPath: '/junk'
+      preLoaderRoute: typeof JunkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/memory': {
+      id: '/memory'
+      path: '/memory'
+      fullPath: '/memory'
+      preLoaderRoute: typeof MemoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/missed': {
+      id: '/missed'
+      path: '/missed'
+      fullPath: '/missed'
+      preLoaderRoute: typeof MissedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/watchlist': {
+      id: '/watchlist'
+      path: '/watchlist'
+      fullPath: '/watchlist'
+      preLoaderRoute: typeof WatchlistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DatesRoute: DatesRoute,
+  DraftsRoute: DraftsRoute,
+  FlaggedRoute: FlaggedRoute,
+  FollowUpsRoute: FollowUpsRoute,
+  JunkRoute: JunkRoute,
+  MemoryRoute: MemoryRoute,
+  MissedRoute: MissedRoute,
+  SettingsRoute: SettingsRoute,
+  WatchlistRoute: WatchlistRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

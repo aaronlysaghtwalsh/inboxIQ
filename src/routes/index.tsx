@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, type LinkProps } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { PageHeader } from "@/components/inbox/AppShell";
 import { BriefingDialog } from "@/components/inbox/BriefingDialog";
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
   component: Overview,
 });
 
-function Section({ title, to, list }: { title: string; to: string; list: InsightItem[] }) {
+function Section({ title, to, list }: { title: string; to: LinkProps["to"]; list: InsightItem[] }) {
   return (
     <section>
       <div className="mb-3 flex items-center justify-between">
