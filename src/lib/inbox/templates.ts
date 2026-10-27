@@ -37,5 +37,5 @@ export const toneLabels: Record<Tone, string> = {
 export function generateDraft(threadId: string, tone: Tone, variant = 0): string {
   const ctx = contexts[threadId] ?? { name: "there", topic: "your note", ask: "Thanks for the update — I'll follow up shortly." };
   const list = variants[tone];
-  return list[variant % list.length](ctx);
+  return list[variant % list.length]?.(ctx) ?? "";
 }
